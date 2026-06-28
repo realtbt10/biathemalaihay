@@ -1,0 +1,343 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="dark"] {
+  --color-primary: #6366f1;
+  --color-bg: #0a0a12;
+  --color-surface: #0f0f1a;
+  --color-border: #1e1e3f;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-input-bg: #1a1a2e;
+  --color-header-bg: linear-gradient(135deg, #0a0a12 0%, #0f0f24 100%);
+}
+
+[data-theme="light"] {
+  --color-primary: #6366f1;
+  --color-bg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-input-bg: #f8fafc;
+  --color-header-bg: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #2d2d5a #0f0f1a;
+}
+
+body,
+.app-body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-shell {
+  background: var(--color-bg);
+}
+
+.app-header {
+  background: var(--color-header-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 16px;
+}
+
+.app-title {
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+
+.app-subtitle {
+  color: #818cf8;
+}
+
+[data-theme="light"] .app-subtitle {
+  color: #6366f1;
+}
+
+.app-version {
+  color: var(--color-text-muted);
+}
+
+.page-shell {
+  padding: 0;
+}
+
+.page-shell-card {
+  border-radius: 0 !important;
+  background: var(--color-surface) !important;
+  box-shadow: none !important;
+}
+
+.page-shell-card .ant-card-body {
+  padding: 24px !important;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 0;
+  }
+
+  .page-shell-card .ant-card-body {
+    padding: 12px 8px !important;
+  }
+
+  .app-header {
+    padding: 10px 8px;
+  }
+}
+
+@media (min-width: 641px) {
+  .page-shell {
+    padding: 0 8px 16px;
+  }
+
+  .page-shell-card {
+    border-radius: 12px !important;
+    margin-top: 8px;
+    border: 1px solid var(--color-border) !important;
+  }
+}
+
+/* Touch-friendly buttons on mobile */
+.ant-btn,
+.touch-btn {
+  touch-action: manipulation;
+}
+
+.touch-controls .ant-btn {
+  min-width: 36px;
+  min-height: 36px;
+}
+
+svg {
+  pointer-events: none;
+}
+
+/* Antd theme-aware overrides */
+.ant-card {
+  background: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+.ant-card-head {
+  background: var(--color-surface) !important;
+  border-bottom-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+.ant-card-body {
+  color: var(--color-text) !important;
+}
+
+.ant-input, .ant-input-number, .ant-input-number-input,
+.ant-picker, .ant-select-selector {
+  background: var(--color-input-bg) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+.ant-input:focus, .ant-input-number:focus,
+.ant-picker:focus-within, .ant-select-selector:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2) !important;
+}
+
+.ant-picker-input > input,
+.ant-input-number-input {
+  color: var(--color-text) !important;
+}
+
+.ant-picker-suffix, .ant-picker-separator {
+  color: #6366f1 !important;
+}
+
+.ant-select-dropdown {
+  background: var(--color-input-bg) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.ant-select-item {
+  color: var(--color-text) !important;
+}
+
+.ant-select-item-option-active,
+.ant-select-item-option-selected {
+  background: #6366f120 !important;
+  color: #6366f1 !important;
+}
+
+.ant-select-arrow {
+  color: #6366f1 !important;
+}
+
+.ant-btn {
+  border-radius: 8px !important;
+}
+
+[data-theme="dark"] .ant-btn-default {
+  background: #1a1a2e !important;
+  border-color: #2d2d5a !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .ant-btn-default {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.ant-btn-default:hover {
+  border-color: #6366f1 !important;
+  color: #6366f1 !important;
+}
+
+.ant-tabs-tab {
+  color: var(--color-text-muted) !important;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #6366f1 !important;
+}
+
+.ant-tabs-ink-bar {
+  background: #6366f1 !important;
+}
+
+.ant-modal-content {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+.ant-modal-header {
+  background: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.ant-modal-title {
+  color: var(--color-text) !important;
+}
+
+.ant-modal-close {
+  color: var(--color-text-muted) !important;
+}
+
+.ant-drawer-header {
+  background: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.ant-drawer-title {
+  color: var(--color-text) !important;
+}
+
+.ant-divider {
+  border-color: var(--color-border) !important;
+}
+
+.ant-tag {
+  border-radius: 6px !important;
+}
+
+.ant-picker-panel-container,
+.ant-picker-panel {
+  background: var(--color-input-bg) !important;
+  border-color: var(--color-border) !important;
+}
+
+.ant-picker-header,
+.ant-picker-header button {
+  color: var(--color-text) !important;
+}
+
+.ant-picker-cell-in-view .ant-picker-cell-inner {
+  color: var(--color-text) !important;
+}
+
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #6366f1 !important;
+}
+
+.ant-picker-today-btn {
+  color: #6366f1 !important;
+}
+
+.ant-input-number-suffix {
+  color: var(--color-text-muted) !important;
+  font-size: 11px !important;
+}
+
+.session-card {
+  border-radius: 12px !important;
+  transition: box-shadow 0.2s ease !important;
+}
+
+.session-card:hover {
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1) !important;
+}
+
+.app-tabs .ant-tabs-nav {
+  margin-bottom: 0 !important;
+}
+
+/* Fix hidden tab panes blocking touch on mobile */
+.ant-tabs-tabpane-hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.ant-alert {
+  border-radius: 8px !important;
+}
+
+.ant-message-notice-content {
+  background: var(--color-input-bg) !important;
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+.theme-toggle-btn {
+  color: var(--color-text) !important;
+}
+
+[data-theme="light"] .text-white {
+  color: var(--color-text) !important;
+}
+
+[data-theme="light"] .text-gray-500 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-gray-400 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .text-gray-300 {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .text-gray-600 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] .border-gray-800 {
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .bg-gray-900\/60 {
+  background: rgba(241, 245, 249, 0.8) !important;
+}
+
+[data-theme="light"] .bg-gray-900\/50 {
+  background: rgba(241, 245, 249, 0.6) !important;
+}
